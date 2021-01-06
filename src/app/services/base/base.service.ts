@@ -17,9 +17,6 @@ export class BaseService {
     protected log(message: string) {
         message = message;
     }
-
-    @param operation - name of the operation that failed
-    @param result - optional value to return as the observable result
      
     protected handleError<T>(operation = 'operation', result ?: T) {
     return (error: any): Observable<T> => {
