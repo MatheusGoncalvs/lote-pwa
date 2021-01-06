@@ -4,7 +4,7 @@ import { LerArquivoExcelComponent } from './componenets/ler-arquivo-excel/ler-ar
 
 const routes: Routes = [
   {
-    path: '*', component: LerArquivoExcelComponent,
+    path: '', component: LerArquivoExcelComponent,
   }
 ];
 
