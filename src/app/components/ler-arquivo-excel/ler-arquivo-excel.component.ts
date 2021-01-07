@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 import { FileService } from 'src/app/services/file.service';
 
 @Component({
@@ -11,7 +12,10 @@ export class LerArquivoExcelComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(private service: FileService) { }
+  constructor(
+    private service: FileService,
+    public route: Router
+  ) { }
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -23,8 +27,12 @@ export class LerArquivoExcelComponent implements OnInit {
     let file = new FormData();
     file.append("file", this.form.controls.anexos.value.files[0])
     this.service.sendFile(file).subscribe(res => {
-      console.log(res)
+      this.success(res);
     });
   }
 
+  success(response) {
+    console.log(response);
+    this.route.navigate(["/listar"]);
+  }
 }
