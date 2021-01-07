@@ -10,15 +10,17 @@ import { BlockUIHttpModule } from 'ng-block-ui/http';
 
 import { MaterialFileInputModule } from 'ngx-material-file-input';
 
-import { LerArquivoExcelComponent } from './componenets/ler-arquivo-excel/ler-arquivo-excel.component';
+import { LerArquivoExcelComponent } from './components/ler-arquivo-excel/ler-arquivo-excel.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MaterialComponentsModule } from './helpers/material-components.module';
 import { HttpClientModule } from '@angular/common/http';
+import { ListarImportacaoComponent } from './components/listar-importacao/listar-importacao.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LerArquivoExcelComponent
+    LerArquivoExcelComponent,
+    ListarImportacaoComponent
   ],
   imports: [
     BrowserModule,

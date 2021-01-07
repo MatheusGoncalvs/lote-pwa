@@ -1,8 +1,8 @@
-<form class="app-form" [formGroup]="form">
-  <mat-form-field class="app-form-control">
+<form [formGroup]="form">
+  <mat-form-field class="form">
     <ngx-mat-file-input placeholder="Anexos" formControlName="anexos"></ngx-mat-file-input>
     <mat-icon matSuffix>folder</mat-icon>
   </mat-form-field>
 
-  <button (click)="onSubmit()">Salvar</button>
+  <button mat-stroked-button (click)="onSubmit()"><mat-icon>save</mat-icon></button>
 </form>
