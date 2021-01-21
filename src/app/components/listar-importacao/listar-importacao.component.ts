@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-listar-importacao',
   templateUrl: './listar-importacao.component.html',
-  styleUrls: ['./listar-importacao.component.scss']
+  styleUrls: ['./listar-importacao.component.css']
 })
 export class ListarImportacaoComponent implements OnInit {
 

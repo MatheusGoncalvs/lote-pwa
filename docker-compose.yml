@@ -1,0 +1,44 @@
+version: "3.3"
+services:
+  pwa:
+    container_name: pwa
+    build: .
+    ports:
+      - "8000:80"
+    depends_on:
+      - db
+      - api-reader
+    networks: 
+      - app-network
+  api-reader:
+    container_name: api-reader
+    image: api-reader:latest
+    ports: 
+      - "8001:80"
+    networks: 
+      - app-network
+  db:
+    container_name: sql-server-db
+    build:
+      context: ./database/
+      dockerfile: Dockerfile
+    ports: 
+      - "1433:1433"
+    networks: 
+      - app-network
+    env_file:
+      - ./database/sqlserver.env
+      - ./database/sapassword.env
+    volumes: 
+      - sqlsystem:/var/opt/mssql/
+      - sqldata:/var/opt/sqlserver/data
+      - sqllog:/var/opt/sqlserver/log
+      - sqlbackup:/var/opt/sqlserver/backup
+volumes: 
+  sqlsystem:
+  sqldata:
+  sqllog:
+  sqlbackup:
+networks: 
+  app-network:
+    driver: bridge

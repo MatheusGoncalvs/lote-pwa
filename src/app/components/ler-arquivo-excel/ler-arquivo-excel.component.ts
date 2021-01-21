@@ -9,7 +9,7 @@ import { FileService } from 'src/app/services/file.service';
 @Component({
   selector: 'app-ler-arquivo-excel',
   templateUrl: './ler-arquivo-excel.component.html',
-  styleUrls: ['./ler-arquivo-excel.component.scss']
+  styleUrls: ['./ler-arquivo-excel.component.css']
 })
 export class LerArquivoExcelComponent implements OnInit {
 
